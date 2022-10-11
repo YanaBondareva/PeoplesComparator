@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 
@@ -17,10 +16,12 @@ public class Main {
         Collections.sort(people, new SurnameComparator());
         Predicate<Person> isAdult;
         isAdult = i -> i.getAge() < 18;
-        Iterator<Person>personIterator = people.iterator();
-        while (personIterator.hasNext())
-        {Person nextPerson = personIterator.next();
-            if (isAdult.test(nextPerson)){personIterator.remove();}
+        Iterator<Person> personIterator = people.iterator();
+        while (personIterator.hasNext()) {
+            Person nextPerson = personIterator.next();
+            if (isAdult.test(nextPerson)) {
+                personIterator.remove();
+            }
 
 
         }
@@ -28,7 +29,7 @@ public class Main {
 
         for (int i = 0; i < people.size(); i++) System.out.println(people.get(i).toSting());
     }
-    }
+}
 
 
 
